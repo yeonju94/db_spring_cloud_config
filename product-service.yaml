@@ -1,0 +1,12 @@
+# spring bean 객체를 만들때 가져오는 용도
+spring:
+  kafka:
+    kafka-server: localhost:9092
+    consumer:
+      # groupid는 컨슈머 그룹을 식별하는 ID로서, 동일한 그룹ID를 가진 컴슈머들은 메시지를 분담해서 consume
+      # 만약 여러 컴슈머가 다른 group-id를 가지고 한 topic을 리슨하면 각기 메시지를 수신하여 메시지 전파 효과 발생
+      # order가 kafka에게 메시지를 보내면, product가 kafka를 바라보고 있다가 메시지를 리슨한다. 이때 그룹id가 동일한 product갸 여러개이면 아무나 한번만가져감(여러번가져가면 재고감소 여러번발생),
+      # 그룹id가 다르면 kafka가 메시지를 각각 전파함
+      group-id: product-group
+      # 카프카내에 들어와있는 메시지중에 처음들어와있는 메시지부터 읽기시작(latest: 현시점이후로 들어오는 메시지만 read), product 서버가 죽었다가 살아난 경우가정
+      auto-offset-reset: earliest
