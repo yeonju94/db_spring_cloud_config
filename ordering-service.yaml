@@ -1,5 +1,10 @@
 # spring bean 객체를 만들 떄 가져오는 용도, jpa:와 라인을 맞춰서 작성
 spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/ordering_db
+    username: root
+    password: admin
   kafka:
     kafka-server: localhost:9092
 resilience4j:

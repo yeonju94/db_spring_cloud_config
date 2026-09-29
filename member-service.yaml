@@ -1,3 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/member_db
+    username: root
+    password: admin
+
 jwt:
   expiration: 1000
   #  인코딩된 문자 32자 이상 필요.(특수문자안됨)

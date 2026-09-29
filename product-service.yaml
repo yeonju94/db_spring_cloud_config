@@ -1,5 +1,10 @@
 # spring bean 객체를 만들때 가져오는 용도
 spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/product_db
+    username: root
+    password: admin
   kafka:
     kafka-server: localhost:9092
     consumer:
